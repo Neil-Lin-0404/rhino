@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秘密網站</title>
+    <style>
+        #hide {
+            display: none;
+            letter-spacing: 1.5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>難道!? 被發現了?</h1>
+    <button id="btn">你想要顯示內容嗎?</button>
+    <br><br>
+    <button id="btn2" style="display:none">確定嗎?</button><br><br>
+    <button id="btn3" style="display:none">真的想知道就再點一次吧</button>
+    <div id="hide">
+    <p>你可以當作沒看到/沒造訪過這網站，但我想告訴你，我喜歡妳 李婕羽:D </p><br>
+    <p>我其實也不會知道你有沒有造訪過這網站 所以安心 :D 我對你的態度不會因此有什麼改變，更不會變得太激進，請安心 哈哈</p>
+    <p>然後</p>
+    <p>以下是我一直想對你說的話 </p>
+    <p><br>
+        ----------------------分隔線----------------------
+        <br>
+            最近有在一直改變自己的方式 就是希望 能相處得更自然自在 👍但每次跟你講話我實在太緊張 哈哈 每次腦袋都會進入一片空白 XD 說真的 也是挺懊悔以前的方式 感覺讓你感到不適 但我有些會發現啦 然後就直接進行改變 有時候一些東西可能會讓你失望 但我大多都會反省哪些可能性會讓你不舒服 然後再提醒自己下次不要觸犯 "
+            <br>
+          ----------------------分隔線----------------------
+          <br>
+            然後 我也挺想講個東西 哈哈 , 很多時候你對我有點冷默的時候 我都在思考我哪裡可能惹到你 然後自己內耗自己哭 XD 但現在 我也就有在透過學習中了解到一些可能你會有的性格 然後就會了解 下次有相似的事情發生 我都會先往那方向思考 然後再思考對策 (? 
+            <br>
+          ----------------------分隔線----------------------
+          <br>
+            以及 我也挺想道歉一聲說 我以前可能真的有點自以為中心 (不知道你會不會也這樣覺得) 就是關於那個 我跟你講說我會程式的時候 就一直只思考自己 不思考關於你 真的很抱歉如果那個部分有讓你感到反感 現在也是不會提啦 哈哈 我也不知道你會不會感到反感 所以選擇直接不提 希望能見諒 嘿嘿
+            <br>
+          ----------------------分隔線----------------------
+          <br>
+          我也不確定你看到這些之後 反應會是怎樣 可能會覺得我直接? 或是覺得我怎樣 然後就不想理我(希望不要 :D)  但 我也能理解 畢竟你可能覺得 我有點太直接(應該 沒有吧 藏這裡了都) 不過 上面可能就是我想對你說的話 平常可能會有些小作文訊息給你 哈哈 , 但那些 我都有經過許許多多的改編 然後思考要不要發送 這裡我也不是想讓你感覺到勒索 我也不想讓你覺得我說這些是在勒索 , 希望不要放在心上 :D 這裡的話 你可以當作我在跟你講話的時候 我會想要說的話 但我不會說出來的話 (?)哈哈 , 看完這個應該感覺都讀了一篇國文閱讀了吧 , 如果累的話可以直接睡 哈哈 被家長逼學習 真的感覺挺辛苦的 也佩服你能克服 真的厲害 .
+          <br>
+          ----------------------分隔線----------------------
+          <br>
+          看到這些 可能會覺得我在立遺言 哈哈
+          好啦 以上 我也不多打擾你了 :D 也祝你天天開心 :D
+    </p>
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            document.getElementById('btn2').style.display = "block";
+            document.getElementById('btn2').addEventListener('click',function(){
+                document.getElementById('btn3').style.display = "block";
+                document.getElementById('btn3').addEventListener('click',function(){
+                    document.getElementById("hide").style.display ="block"; 
+                });
+        });
+    });
+    </script>
+</body>
+</html>

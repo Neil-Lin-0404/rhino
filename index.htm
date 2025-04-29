@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhino Ahhh</title>
+    <style>
+      body {
+        background-color: rgb(230, 230, 230);
+      }
+      .div {
+        width: 98vw;
+        height: 98vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+      @media screen and (max-width: 480px) {
+        .div {
+          width: 100vw;
+          height: 100vh;
+        }
+        #rhino {
+          width: 45vw;
+          height: 35vh;
+          border-radius: 100%;
+          border: 1px solid black;
+        }
+      }
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        .div {
+          width: 100vw;
+          height: 100vh;
+        }
+        #rhino {
+          width: 40vw;
+          height: 30vh;
+          border-radius: 100%;
+          border: 1px solid black;
+        }
+      }
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .div {
+          width: 100vw;
+          height: 100vh;
+        }
+        #rhino {
+          width: 50vw;
+          height: 50vh;
+          border-radius: 100%;
+          border: 1px solid black;
+        }
+      }
+      @media screen and (min-width: 1025px) and (max-width: 1440px) {
+        .div {
+          width: 100vw;
+          height: 100vh;
+        }
+        #rhino {
+          width: 50vw;
+          height: 55vh;
+          border-radius: 100%;
+          border: 1px solid black;
+        }
+      }
+      @media screen and (min-width: 1441px) {
+        .div {
+          width: 100vw;
+          height: 100vh;
+        }
+        #rhino {
+          width: 35vw;
+          height: 55vh;
+          border-radius: 100%;
+          border: 1px solid black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="btn"
+      style="
+        width: 100px;
+        font-size: 15px;
+        height: 30px;
+        background: linear-gradient(45deg, lightblue, red);
+        border-radius: 10px;
+        cursor: pointer;
+      "
+    >
+      可點/不點
+    </button>
+    <sup>聽說這按鈕有神奇功效</sup>
+    <a href="hint.html" style="display: none;" id="hints">
+      提示區域 :D
+    </a>
+    <div class="div">
+      <img
+        src="./494357156_1762835244644009_8933457216113606326_n.png"
+        id="rhino"
+        alt = "失效了跟我講 哈哈"
+      />
+    </div>
+    <script>
+      let clicked = false;
+      document.getElementById("btn").addEventListener('click',function(){
+      if (!clicked) 
+      {
+          alert("這頁面藏了個彩蛋 :D 看你能不能找到");
+          document.getElementById('btn').innerHTML = "提示 :D";
+          clicked = true;
+      } else {
+  
+        alert("好像 出現一個連結了");
+        document.getElementById('hints').style.display = "block";
+      }
+    });
+      console.log(
+        "Entire Website were made by 林品佑 , Copy Right Owned, Made On 2025/4/29 11:30:00 PM"
+      );
+    </script>
+  </body>
+</html>
