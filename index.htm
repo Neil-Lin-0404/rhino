@@ -5,54 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhino Ahhh</title>
     <style>
-      body {
-        letter-spacing: 1.5px;
-        background-color: rgb(236, 236, 236);
-        color: black;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-      .comment {
-        opacity: 0.5;
-        font-size: 15px;
-      }
-      button {
-        border-radius: 10px;
-      }
-      button:active {
-        background-color: rgb(21, 219, 31);
-        transition: 0.5s;
-        color: black;
-      }
-      p {
-        line-height: 1.8;
-        margin-bottom: 12px;
-      }
-      @media (max-width: 600px) {
-        h1 {
-          font-size: 24px;
-        }
-        p {
-          font-size: 16px;
-        }
-        button {
-          font-size: 14px;
-          padding: 8px 14px;
-        }
-      }
-      button {
-          font-size: 14px;
-          padding: 8px 14px;
-        }
-      .playing {
-        background-color: rgb(21, 219, 31);
-        color: black;
-      }
-      hr{
-        border: 1px solid #ccc; margin: 30px 0;
-      }
+body {
+  letter-spacing: 1.5px;
+  background-color: rgb(235, 235, 235);
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  padding-bottom: 100px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.comment {
+  opacity: 0.5;
+  font-size: 15px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+button {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 8px 14px;
+  margin: 5px 8px 10px 0;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+button:active {
+  background-color: rgb(21, 219, 31);
+  color: black;
+}
+
+.playing {
+  background-color: rgb(21, 219, 31);
+  color: black;
+}
+
+body.dark-mode button {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode button:hover {
+  background-color: #444;
+}
+
+body.dark-mode button:active {
+  background-color: rgb(21, 219, 31);
+  color: black;
+}
+
+body.dark-mode .playing {
+  background-color: rgb(21, 219, 31);
+  color: black;
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 30px 0;
+}
+
+body.dark-mode hr {
+  border-color: #444;
+}
+
+.toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .toggle {
+  background-color: #333;
+  color: white;
+}
+
+audio {
+  margin: 10px 0 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
     </style>
   </head>
   <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<button class="toggle" onclick="toggleMode()">
+  <i class="fa-solid fa-sun"></i>
+  <span style="transform: rotate(20deg); display: inline-block;">/</span>
+  <i class="fa-solid fa-moon"></i>
+</button>
     <h1>知道你應該會回來看 所以偷偷更新了 :D</h1>
     <p>放三首輕鬆的小歌 希望妳喜歡 或 當作放鬆用 :D</p>
     <p>點擊之前先測試音量(設定通常比這更小聲)</p>
@@ -157,16 +243,48 @@
       可能會覺得我在立遺言 哈哈 好啦 以上 我也不多打擾你了 :D 也祝你開心 :D
     </p>
     <script>
-function playAudio(song) {
-  const player = document.getElementById("player");
-  player.pause();
-  player.src = song;
-  player.play();
-  const buttons = document.querySelectorAll("button");
-  buttons.forEach((btn) => btn.classList.remove("playing"));
-  event.target.classList.add("playing"); // <-- 加這個
-}
+  function playAudio(song) {
+    const player = document.getElementById("player");
+    const buttons = document.querySelectorAll("button");
 
+    player.pause();
+    player.src = song;
+    player.play();
+
+    buttons.forEach((btn) => btn.classList.remove("playing"));
+    
+    // 尋找觸發播放的按鈕
+    const clickedButton = [...buttons].find(btn => btn.innerText.includes(song.split('.')[0]));
+    if (clickedButton) clickedButton.classList.add("playing");
+  }
+
+  // 亮暗模式切換
+  function toggleMode() {
+    const body = document.body;
+    const toggleBtn = document.querySelector(".toggle");
+    const isDark = body.classList.toggle("dark-mode");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    
+    if (isDark) {
+      toggleBtn.style.backgroundColor = "black";
+      toggleBtn.style.color = "white";
+    } else {
+      toggleBtn.style.backgroundColor = "#fff";
+      toggleBtn.style.color = "black";
+    }
+  }
+
+  // 初始主題設定（根據 localStorage）
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+      const toggleBtn = document.querySelector(".toggle");
+      toggleBtn.style.backgroundColor = "black";
+      toggleBtn.style.color = "white";
+    }
+  };
     </script>
   </body>
 </html>
