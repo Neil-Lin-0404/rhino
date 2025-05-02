@@ -121,6 +121,8 @@
       <p style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; opacity: 0.6;">
         上次更新時間 : 2025/5/3 , 00:05:04
       </p>
+      <p id="birthday-countdown"style="position: fixed; bottom: 30px; right: 10px; font-size: 12px; opacity: 0.6;"></p>
+
     </div>
     <script src="./script.js"></script>
     <script type="module">
@@ -146,6 +148,29 @@
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
+    <script>
+      function updateBirthdayCountdown() {
+        const birthdayMonth = 6; // 7月 → 月份從0開始，所以是6
+        const birthdayDate = 17;
+    
+        const today = new Date();
+        let nextBirthday = new Date(today.getFullYear(), birthdayMonth, birthdayDate);
+    
+        // 如果今年已經過了生日，就設定為明年
+        if (today > nextBirthday) {
+          nextBirthday = new Date(today.getFullYear() + 1, birthdayMonth, birthdayDate);
+        }
+    
+        const diffTime = nextBirthday - today;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+        document.getElementById("birthday-countdown").textContent = 
+          `距離一個日子還有 ${diffDays} 天`;
+      }
+    
+      updateBirthdayCountdown();
+    </script>
+    
   </body>
 </html>
 
