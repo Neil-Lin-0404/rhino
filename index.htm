@@ -1,125 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhino Ahhh</title>
     <style>
-      body {
-        background-color: rgb(230, 230, 230);
-      }
-      .div {
-        width: 98vw;
-        height: 98vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-      }
-      @media screen and (max-width: 480px) {
-        .div {
-          width: 100vw;
-          height: 100vh;
+        #hide {
+            display: none;
+            letter-spacing: 1.5px;
         }
-        #rhino {
-          width: 45vw;
-          height: 35vh;
-          border-radius: 100%;
-          border: 1px solid black;
-        }
-      }
-      @media screen and (min-width: 481px) and (max-width: 768px) {
-        .div {
-          width: 100vw;
-          height: 100vh;
-        }
-        #rhino {
-          width: 40vw;
-          height: 30vh;
-          border-radius: 100%;
-          border: 1px solid black;
-        }
-      }
-      @media screen and (min-width: 769px) and (max-width: 1024px) {
-        .div {
-          width: 100vw;
-          height: 100vh;
-        }
-        #rhino {
-          width: 50vw;
-          height: 50vh;
-          border-radius: 100%;
-          border: 1px solid black;
-        }
-      }
-      @media screen and (min-width: 1025px) and (max-width: 1440px) {
-        .div {
-          width: 100vw;
-          height: 100vh;
-        }
-        #rhino {
-          width: 45vw;
-          height: 55vh;
-          border-radius: 100%;
-          border: 1px solid black;
-        }
-      }
-      @media screen and (min-width: 1441px) {
-        .div {
-          width: 100vw;
-          height: 100vh;
-        }
-        #rhino {
-          width: 35vw;
-          height: 55vh;
-          border-radius: 100%;
-          border: 1px solid black;
-        }
-      }
     </style>
-  </head>
-  <body>
-    <button
-      id="btn"
-      style="
-        width: 100px;
-        font-size: 15px;
-        height: 30px;
-        background: linear-gradient(45deg, lightblue, red);
-        border-radius: 10px;
-        cursor: pointer;
-      "
-    >
-      一顆按鈕
-    </button>
-    <sup>聽說這按鈕有神奇功效</sup>
-    <a href="hint.html" style="display: none;" id="hints">
-      神奇的連結
-    </a>
-    <div class="div">
-      <img
-        src="./494357156_1762835244644009_8933457216113606326_n.png"
-        id="rhino"
-        alt = "失效了跟我講 哈哈"
-      />
-    </div>
+</head>
+<body>
+    <h1>知道你應該會回來看 所以偷偷更新了 :D</h1>
+    <p>放三首輕鬆的小歌，希望妳喜歡 或 當作放鬆用 :D</p>
+    <p>點擊之前先測試音量(比這更小聲)</p>
+    <audio src="./test.mp3" controls></audio>
+    <br>
+
+    <button onclick="playAudio('SunShine.mp3')">開心</button>
+<button onclick="playAudio('MoonLight.mp3')">微開心(吧)</button>
+<button onclick="playAudio('MaskRos.mp3')">Chill 一點</button>
+
+<audio id="player" controls style="margin-top: 10px; display:block;"></audio>
+    <p>----------------------分隔線----------------------</p>
+    <p>你可以當作沒看到/沒造訪過這網站，但我想告訴你，我喜歡妳 李婕羽:D </p><br>
+    <p>這個就算是妳在 4/30 英文課問我是不是gay的回答吧 哈哈</p>
+        <p>有一件事我想補充一下 我知道你曾經說過你想要的是那種 "一談就可以永久" 的戀愛 我其實很尊重你的想法 所以你不用擔心 這裡的內容不是為了讓你做出什麼決定 而只是我單純想把我對你的喜歡 好好地說出來而已 :D 希望這樣沒有給你造成困擾</p>
+    <p>我其實也不會知道你有沒有造訪過這網站 所以安心 :D 我對你的態度不會因此有什麼改變，更不會變得太激進，請安心 哈哈
+    </p>
+    <p>然後</p>
+    <p>以下是我一直想對你說的話 </p>
+    <p><br>
+        ----------------------分隔線----------------------
+        <br>
+        <br>
+            最近有在一直改變自己的方式 就是希望 能相處得更自然自在 👍但每次跟你講話我實在太緊張 哈哈 每次腦袋都會進入一片空白 不然就是想好要講甚麼 但是要講的時候又忘記 XD 然後 我現在也感覺能比較自然的講話了 可是 我還是不太會接話或開話題 希望可以見諒 :D 容我再練習一下 說真的 也是挺懊悔以前的方式 感覺讓你感到不適 但我有些會發現啦 然後就直接進行改變 有時候一些東西可能會讓你失望 但我大多都會反省哪些可能性會讓你不舒服 然後再提醒自己下次不要觸犯 :D
+            <br>
+          ----------------------分隔線----------------------
+          <br>
+        <br>
+            然後 我也挺想講個東西 哈哈 , 很多時候你對我有點冷默的時候 我都在思考我哪裡可能惹到你 然後自己內耗自己哭 XD 但現在 慢慢學會照顧自己的情緒了 以及 我也就有在透過學習中了解到一些可能你會有的性格 然後就會了解 下次有相似的事情發生 我都會先往那方向思考 然後再思考對策 (? 
+            <br>
+        ----------------------分隔線----------------------
+        <br><br>
+        有件事我其實一直很想讓你知道 
+很多跟你互動的時候我都記得很清楚 像有一次在生科課 我們一起回教室拿東西 不知道聊到什麼 你無意間說了我（隱藏內容） 我到現在還記得 XD
+
+也有一次 是我覺得最遺憾的吧 那天放學時你走過來 但我卻不知道哪根筋不對 直接走掉了 那時候其實很想走回去 但我又不確定你們走到哪了 
+
+還有 你說過的話我都有聽進去 只是當下很多情況太突然了 我沒能好好回應你 不是不在乎 只是那時候的我 真的還不懂怎麼好好面對別人的心意
+
+現在回頭想想 我很希望能補回當時的缺席 以前我其實就喜歡你 只是那時候的我還沒學會怎麼去在乎一個人 現在的我 在正在慢慢學會 也希望有一天你能看到這些努力<br>
+          ----------------------分隔線----------------------
+          <br>
+        <br>
+            以及 我也挺想道歉一聲說 我以前可能真的有點自以為中心 (不知道你會不會也這樣覺得) 就是關於那個 我跟你講說我會程式的時候 就一直只思考自己 不思考關於你 真的很抱歉如果那個部分有讓你感到反感 現在也是不會提啦 哈哈 我也不知道你會不會感到反感 但如果 我之後如果提到興趣 也會更注意你的感受 嘿嘿
+            
+        <br>
+          ----------------------分隔線----------------------
+          <br>
+        <br>
+          我也不確定你看到這些之後 反應會是怎樣 可能會覺得我直接? 或是覺得我怎樣 然後就不想理我(希望不要 :D)  但 我也能理解 畢竟你可能覺得 我有點太直接 e 不過 上面可能就是我想對你說的話 平常可能會有些小作文訊息給你 哈哈 , 但那些 我都有經過許許多多的改編 然後思考要不要發送 這裡我也不是想讓你感覺到勒索 , 希望不要放在心上 :D 這裡的話 你可以當作我在跟你講話的時候 我會想要說的話 但我不會說出來的話 (?)哈哈 , 看完這個應該感覺都讀了一篇國文閱讀了吧 , 如果你是打完針那天讀 也辛苦你 希望這個 不會勞累你太多 然後 被家長逼學習 真的感覺挺辛苦的 也佩服你能克服 真的厲害 .
+          <br>
+          ----------------------分隔線----------------------
+          <br>
+        <br>
+          再補充一下 :D
+          4/30 早上面無表情不是對你態度不好啦(如果你沒這樣覺得就當我多慮 哈哈)  我只是大腦還沒開機 e 有人互動我就會變成上學模式 XD
+          看到這些 可能會覺得我在立遺言 哈哈
+          好啦 以上 我也不多打擾你了 :D 也祝你開心 :D
+    </p>
     <script>
-      let clicked = false;
-      document.getElementById("btn").addEventListener('click',function(){
-      if (!clicked) 
-      {
-          alert("這頁面藏了個彩蛋 :D 看你能不能找到");
-          document.getElementById('btn').innerHTML = "提示 :D";
-          clicked = true;
-      } else {
-  
-        alert("好像 出現一個連結了");
-        document.getElementById('hints').style.display = "block";
+      function playAudio(song) {
+        const player = document.getElementById('player');
+        player.src = song;
+        player.play();
       }
-    });
-      console.log(
-        "Entire Website were made by 林品佑 , Copy Right Owned, Made On 2025/4/29 11:30:00 PM"
-      );
     </script>
-  </body>
+</body>
 </html>
