@@ -156,7 +156,7 @@ body {
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
     animation: pulse 2s infinite;
   }
-.fade{
+#MC *{
   opacity: 0;
   animation: fadeInAnimation 1.5s ease-in forwards;
 }
