@@ -4,6 +4,7 @@ function playAudio(song) {
 
     player.pause();
     player.src = song;
+    player.loop = true;
     player.play();
 
     buttons.forEach((btn) => btn.classList.remove("playing"));
