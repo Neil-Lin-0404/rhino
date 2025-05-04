@@ -1,3 +1,8 @@
+if (!localStorage.getItem("alertShown")) {
+    alert("Hi 我被 IG 禁言 7 天 所以目前沒辦法傳訊息 e \n如果你有傳訊息給我 我可能只能已讀不回 很想回但回不了 :< \n我會把話留在這裡 有看到的話可以看看 :D");
+    localStorage.setItem("alertShown", "true");
+}
+
 function playAudio(song) {
     const player = document.getElementById("player");
     const buttons = document.querySelectorAll("button");
