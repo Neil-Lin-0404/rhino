@@ -1,321 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>一個停更的網站 也包含離開前最後一句話</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="
+  <title>Happy birthday</title>
+<style>
+  :root{
+    --bg:#ffe3ec;
+    --note:#fff7e6;
+    --note-edge:#ffd77a;
+    --accent:#ff4d6d;
+    --text:#222;
+  }
 
-<button class="toggle" onclick="toggleMode()">
-  <i class="fa-solid fa-sun"></i>
-  <span style="transform: rotate(20deg); display: inline-block;">/</span>
-  <i class="fa-solid fa-moon"></i>
-</button>
-    <div id="MC">
-    <h1>一個停更的網站 也包含離開前最後一句話</h1>
-      <p style="font-size:15px;">2025/5/18沒意外會是Final Update</p>
-      <p style="font-size:15px;">沒事 5/14 , Final Update</p>
-      <p style="font-size:20px">網站的最後一句話:</p>
-      <p>
-        反正沒什麼人會看 也剛好是最後一次 我也就以自己最初始打的 不用任何改編的話講了
-        <br>
-        這次用完這網站就當紀念了
-        到時候回來看看 看我當時是怎喜歡一個人的 呵呵
-        <br>
-        開心過 傷心過 努力過 感覺也差不多了
-        該說的說了 該做的也做了 差不多時刻也該抽身了
-        這段旅程也確實讓我成長了不少啦 
-        在部分方面的知識也有大量學習
-        甚至還更了解了我自己 
-        <br>
-        這段旅程就當一段里程碑吧
-        也許會有一天我會回來這裡
-        <br>
-        我也就祝福彼此到時候各走各的路都順順利利的 身體維持良好 
-        <br>
-        ——————2025/5/14 01:22 最後的編輯
-      </p>
-      <hr>
-<details><summary>5/6號的話 :D</summary>
-<p>
-  雖然今天你沒收喉糖 當下情緒確實有點小低落 哈哈
-畢竟很多時候都想挺久再鼓起勇氣 e 但沒關係
-需要喉糖的時候可以講 隨時為你準備好 :D
-  早點好喔 :D
-  <details>
-    <summary>小小的告訴(想好再點 不是甚麼勁爆內容啦)</summary>
-  <p>我自己有發現最近改變蠻多的 可能讓你沒法一時適應  哈哈
-     但其實會有這麼大變化 真的也是因為在意啦
-希望不會讓你覺得我太奇怪就是了~~ :D
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+    font-family:"Noto Sans TC",sans-serif;
+    background:var(--bg);
+    overflow-x:hidden;
+  }
 
-  </p>
-  </details>
-</p>
-  
-</details>
-      <hr>
-      
-      <hr>
-      <details><summary>5/5號的話 :D</summary>
-<p>
-不太確定妳現在還會不會再點開這個網站, 但我還是想說一點心裡的話.<br><br>
+  /* 背景心臟 */
+  .bg-heart{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    opacity:0.2;
+    z-index:0;
+  }
 
-今天妳一直在咳嗽, 我知道妳感冒了.<br>
-其實我有帶著那顆妳上次沒收下的喉糖, 一直放在書包裡.<br>
-原本想找個時機給妳, 但...真的找不到合適的時候.<br><br>
+  /* 便利貼 */
+  .note{
+    position:relative;
+    margin:30px auto;
+    background:var(--note);
+    border:2px solid var(--note-edge);
+    padding:20px;
+    width:250px;
+    transform:rotate(-3deg);
+    box-shadow:2px 6px 10px rgba(0,0,0,0.15);
+    z-index:1;
+  }
+  .note h1{margin:0 0 10px;font-size:24px;color:var(--accent);}
+  .note p{margin:0;font-size:16px;color:var(--text);}
 
-說幾句話我還可以, 但如果是給東西, 就怕被別人亂傳. <br>
-我自己倒是沒什麼差, 只是擔心會讓妳困擾, 所以最後還是沒行動. <br><br>
+  /* 下方文字 */
+  .content{
+    margin-top:50px;
+    font-size:20px;
+    max-width:600px;
+    padding:20px;
+    text-align:center;
+    line-height:1.6;
+    z-index:1;
+    position:relative;
+  }
+</style>
+</head>
+<body>
+  <!-- 背景心臟 -->
+  <svg class="bg-heart" viewBox="0 0 200 200">
+    <path id="heart-path"
+      d="M100 170 
+         C 20 100, 40 40, 100 80 
+         C 160 40, 180 100, 100 170 Z"
+      fill="none" stroke="#ff4d6d" stroke-width="4"
+      stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  </svg>
 
-如果妳覺得我可以直接一點\不需要那麼顧慮的話,<br>
-可以讓我知道, 我會去調整.（可以傳 IG，但我目前被禁言了 D:）<br><br>
+  <!-- 便利貼 -->
+  <div class="note">
+          <h1>生日快樂</h1>
+      <p>祝張晴心老師生日快樂~</p>
 
-最後想說: <br>
-當下聽到妳咳嗽卻沒能把喉糖拿出來, 我真的有點懊惱. :(<br>
-不管妳會不會回應, 就算只是默默看了\不說話也沒關係.<br>
-我只是想讓妳知道——我還在這裡.<br>
-</p>
-      </details>
-<hr>
-  
+  </div>
 
-    <p>放三首輕鬆的小歌 希望妳喜歡 或 當作放鬆用 :D</p>
-    
-    <p>點擊之前先測試音量(設定通常比這更小聲)</p>
-    <audio
-      src="./test.mp3"
-      controls
-      style="margin-top: 10px; display: block"
-    ></audio>
-    <br />
-    <p class="comment">這裡已修復</p>
-    <button onclick="playAudio('SunShine.mp3')">快樂版</button>
-    <button onclick="playAudio('MoonLight.mp3')">快樂版 (微DJ)</button>
-    <button onclick="playAudio('MaskRos.mp3')">無歌詞 Chill歌</button>
-    <p>1.SunShine | Geometry Dash (搜尋地點 : <a href="https://youtu.be/y2T2bTuynkI?si=n1lQWF3FWesSsu9a">Youtube</a>)</p>
-    <span class="comment">這首不是OneRepublic 的 , 由Unzor 的遊戲影片所取</span>
-    <p>2. Fantasy | cloudfield Reichuu (搜尋地點 : <a href="https://youtu.be/_E2nc9AG2dE?si=CZuB5UdNRU10YuYT">Youtube</a> / <a href="https://open.spotify.com/track/2MsNGQPfcVDlKwfnoExJL8?si=8ee0f879b280422a">Spotify</a>)</p> 
-    <p>3. Maskros | Lofi Cafe (搜尋地點 : <a href="https://open.spotify.com/track/6UFRV34euOz5X7sCfJgGyV?si=23917d1535164668">Spotify</a>)</p>
-
-    <audio
-      id="player"
-      controls
-      style="margin-top: 10px; display: block"
-    ></audio>
-    <p class="comment">若有出現音樂無法撥放可以跟我講 我可以維修 :D</p>
-    <p class="comment">可以循環播放了喔</p>
-    <br>
-    <hr>
-    <br>
-    <p>你可以當作沒看到/沒造訪過這網站，但我想告訴你，我喜歡妳 李婕羽:D</p>
-    <p>這個就算是妳在 4/30 英文課問我是不是gay的回答吧 哈哈</p>
+  <!-- 下方文字 -->
+  <div class="content">
     <p>
-      有一件事我想補充一下 我知道你曾經說過你想要的是那種 "一談就可以永久"
-      的戀愛 我其實很尊重你的想法 所以你不用擔心
-      這裡的內容不是為了讓你做出什麼決定 而只是我單純想把我對你的喜歡
-      好好地說出來而已 :D 希望這樣沒有給你造成困擾
-    </p>
-    <p>
-      我其實也不會知道你有沒有造訪過這網站 所以安心 :D
-      我對你的態度不會因此有什麼改變，更不會變得太激進，請安心 哈哈
-    </p>
-    <p>然後</p>
-    <p>以下是我一直想對你說的話</p>
-    <br>
-    <hr>
-    <br>
-      最近有在一直改變自己的方式 就是希望 能相處得更自然自在
-      👍但每次跟你講話我實在太緊張 哈哈 每次腦袋都會進入一片空白
-      不然就是想好要講甚麼 但是要講的時候又忘記 XD 然後
-      我現在也感覺能比較自然的講話了 可是 我還是不太會接話或開話題 希望可以見諒
-      :D 容我再練習一下 說真的 也是挺懊悔以前的方式 感覺讓你感到不適
-      但我有些會發現啦 然後就直接進行改變 有時候一些東西可能會讓你失望
-      但我大多都會反省哪些可能性會讓你不舒服 然後再提醒自己下次不要觸犯 :D
-      <br>
-      <br>
-      <hr>
-      <br>
-      然後 我也挺想講個東西 哈哈 , 很多時候你對我有點冷默的時候
-      我都在思考我哪裡可能惹到你 然後自己內耗自己哭 XD 但現在
-      慢慢學會照顧自己的情緒了 以及
-      我也就有在透過學習中了解到一些可能你會有的性格 然後就會了解
-      下次有相似的事情發生 我都會先往那方向思考 然後再思考對策 (?
-      <br>
-      <br>
-      <hr>
-      <br>
-      有件事我其實一直很想讓你知道 很多跟你互動的時候我都記得很清楚
-      像有一次在生科課 我們一起回教室拿東西 不知道聊到什麼
-      你無意間說了我（隱藏內容） 我到現在還記得 XD 也有一次 是我覺得最遺憾的吧
-      那天放學時你走過來 但我卻不知道哪根筋不對 直接走掉了 那時候其實很想走回去
-      但我又不確定你們走到哪了 還有 你說過的話我都有聽進去
-      只是當下很多情況太突然了 我沒能好好回應你 不是不在乎 只是那時候的我
-      真的還不懂怎麼好好面對別人的心意 現在回頭想想 我很希望能補回當時的缺席
-      以前我其實就喜歡你 只是那時候的我還沒學會怎麼去在乎一個人 現在的我
-      在正在慢慢學會 也希望有一天你能看到這些努力    
-      <br>
-      <br>
-      <hr>
-      <br>
-      以及 我也挺想道歉一聲說 我以前可能真的有點自以為中心
-      (不知道你會不會也這樣覺得) 就是關於那個 我跟你講說我會程式的時候
-      就一直只思考自己 不思考關於你 真的很抱歉如果那個部分有讓你感到反感
-      現在也是不會提啦 哈哈 我也不知道你會不會感到反感 但如果 我之後如果提到興趣
-      也會更注意你的感受 嘿嘿
-      <br>
-      <br>
-      <hr>
-      <br>
-      我也不確定你看到這些之後 反應會是怎樣 可能會覺得我直接? 或是覺得我怎樣
-      然後就不想理我(希望不要 :D) 但 我也能理解 畢竟你可能覺得 我有點太直接 e
-      不過 上面可能就是我想對你說的話 平常可能會有些小作文訊息給你 哈哈 , 但那些
-      我都有經過許許多多的改編 然後思考要不要發送 這裡我也不是想讓你感覺到勒索 ,
-      希望不要放在心上 :D 這裡的話 你可以當作我在跟你講話的時候 我會想要說的話
-      但我不會說出來的話 (?)哈哈 , 看完這個應該感覺都讀了一篇國文閱讀了吧 ,
-      如果你是打完針那天讀 也辛苦你 , 希望這個 不會勞累你太多 然後 被家長逼學習
-      真的感覺挺辛苦的 也佩服你能克服 真的厲害
-      <br>
-      <br>
-      <hr>
-      <br>
-      再補充一下 :D 4/30
-      早上面無表情不是對你態度不好啦(如果你沒這樣覺得就當我多慮 哈哈)
-      我只是大腦還沒開機 e 有人互動我就會變成上學模式 XD 看到這些
-      可能會覺得我在立遺言 哈哈 好啦 以上 我也不多打擾你了 :D 也祝你開心 :D
-    </p><br><br>
-    <p>如果要找我的話 及時回答的話 這裡是我有空的時間表 
-      訊息 通話 找我出去(?) 都可以 :D</p>
-      <p>你需要的時候 我都可以幫 也可以聽 ,不用擔心麻煩我 或打擾到我 , 看到你傳反而會開心 哈哈</p><br>
-      <div id="table">
-    <p>正常時候</p>
-    <table>
-      <tr>
-        <th>星期</th>
-        <th>時間</th>
-      </tr>
-      <tr>
-        <td>一</td>
-        <td>17:00 - 24:00</td>
-      </tr>
-      <tr>
-        <td>二</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>三</td>
-        <td>17:00 - 24:00</td>
-      </tr>
-      <tr>
-        <td>四</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>五</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>六</td>
-        <td>17:00 - 24:00</td>
-      </tr>
-      <tr>
-        <td>日</td>
-        <td>12:00 - 24:00</td>
-      </tr>
-    </table>
-    <hr id="straight">
-    <p>段考前兩週</p>
-    <table>
-      <tr>
-        <th>星期</th>
-        <th>時間</th>
-      </tr>
-      <tr>
-        <td>一</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>二</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>三</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>四</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>五</td>
-        <td>22:20 - 24:00</td>
-      </tr>
-      <tr>
-        <td>六</td>
-        <td>17:00 - 24:00</td>
-      </tr>
-      <tr>
-        <td>日</td>
-        <td>17:00 - 24:00</td>
-      </tr>
-    </table>
-    </div>
-    </div>
-    <div id="corner">
-      <p style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; opacity: 0.6;">
-        上次更新時間 : 2025/5/14 ,01:22
-      </p>
-      <p id="birthday-countdown"style="position: fixed; bottom: 30px; right: 10px; font-size: 12px; opacity: 0.6;"></p>
+              不知道第幾歲但是生日快樂<br />
+        感謝你的耐心教導 還有給我們看影片<br />
 
-    </div>
-    <script src="./script.js"></script>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyCYp77oSIMKpme_1EPTZP1PowZZ-jT7rTs",
-        authDomain: "my-website-tracker.firebaseapp.com",
-        projectId: "my-website-tracker",
-        storageBucket: "my-website-tracker.firebasestorage.app",
-        messagingSenderId: "268131551296",
-        appId: "1:268131551296:web:2322b267ae1f5e2cb037a5",
-        measurementId: "G-N58BRZC03P"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
-    <script>
-      function updateBirthdayCountdown() {
-        const birthdayMonth = 6; // 7月 → 月份從0開始，所以是6
-        const birthdayDate = 17;
-    
-        const today = new Date();
-        let nextBirthday = new Date(today.getFullYear(), birthdayMonth, birthdayDate);
-    
-        // 如果今年已經過了生日，就設定為明年
-        if (today > nextBirthday) {
-          nextBirthday = new Date(today.getFullYear() + 1, birthdayMonth, birthdayDate);
-        }
-    
-        const diffTime = nextBirthday - today;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-        document.getElementById("birthday-countdown").textContent = 
-          `距離一個日子還有 ${diffDays} 天`;
+              然後下次讓李貫誠唱歌啦 不知道能說什麼 : D
+
+    </p>
+  </div>
+
+  <script>
+    // 愛心線條逐步畫出
+    const path = document.getElementById("heart-path");
+    let length = path.getTotalLength();
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+
+    let progress = 0;
+    function animate(){
+      progress += 2; // 畫線速度
+      if(progress <= length){
+        path.style.strokeDashoffset = length - progress;
+        requestAnimationFrame(animate);
+      }else{
+        // 完成後稍停，再重新開始
+        setTimeout(()=>{
+          progress = 0;
+          path.style.strokeDashoffset = length;
+          animate();
+        },1000);
       }
-    
-      updateBirthdayCountdown();
-    </script>
-    
-  </body>
+    }
+    animate();
+  </script>
+</body>
 </html>
